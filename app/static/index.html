@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Vault Admin</title>
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: 2em auto; }
+    input, button { padding: 6px 10px; margin: 4px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    .hidden { display: none; }
+    #error { color: #b00020; }
+  </style>
+</head>
+<body>
+  <h1>Vault — админ-панель</h1>
+
+  <div id="login-block">
+    <h2>Вход</h2>
+    <input id="email" type="email" placeholder="email" />
+    <input id="password" type="password" placeholder="password" />
+    <button id="login-btn">Войти</button>
+    <div id="error"></div>
+  </div>
+
+  <div id="admin-block" class="hidden">
+    <button id="logout-btn">Выйти</button>
+    <h2>OAuth-клиенты</h2>
+    <input id="client-name" placeholder="Название клиента" />
+    <button id="create-client-btn">Создать клиента</button>
+    <table id="clients-table">
+      <thead>
+        <tr><th>ID</th><th>clientId</th><th>Name</th><th>Confidential</th><th>Created</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="/admin/app.js"></script>
+</body>
+</html>
